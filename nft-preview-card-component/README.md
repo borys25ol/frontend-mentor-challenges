@@ -46,5 +46,6 @@ Actions:
 
 ## Author
 
-- Github - [@borys25ol](https://github.com/borys25ol)
+- Github - [borys25ol](https://github.com/borys25ol)
+- LinkedIn [Borys Oliinyk](https://www.linkedin.com/in/borys-oliinyk-872a73158/)
 - Frontend Mentor - [@borys25ol](https://www.frontendmentor.io/profile/borys25ol)
