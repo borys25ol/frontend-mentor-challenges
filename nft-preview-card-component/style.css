@@ -86,6 +86,7 @@ img {
   border-radius: var(--radius);
   background-color: var(--cyan-opacity);
   opacity: 0;
+  transition: ease 0.3s;
 }
 
 .card__logo:hover::after {
