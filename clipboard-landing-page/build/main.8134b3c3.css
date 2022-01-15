@@ -243,7 +243,7 @@ h3.heading-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("build/bg-header-mobile.f1d27f96.png");
+  background-image: url("bg-header-mobile.f1d27f96.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -255,7 +255,7 @@ h3.heading-title {
 
 @media screen and (min-width: 992px) {
   .header__logo {
-    background-image: url("build/bg-header-desktop.ff53d7d3.png");
+    background-image: url("bg-header-desktop.ff53d7d3.png");
   }
 }
 .tracking {
