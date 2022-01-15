@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  color: #4c545d;
   box-sizing: border-box;
   font-size: 18px;
   font-family: "Bai Jamjuree", sans-serif;
@@ -341,7 +342,7 @@ h3.heading-title {
 }
 .access img {
   width: auto;
-  height: 180px;
+  min-height: 180px;
   margin-top: 65px;
 }
 
