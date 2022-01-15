@@ -1,0 +1,20 @@
+{
+  "name": "clipboard-landing-page",
+  "version": "1.0.0",
+  "description": "Clipboard Landing Page",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --out-dir ./build --public-url=./build"
+  },
+  "author": "Borys Oliinyk",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "posthtml-include": "^1.7.2",
+    "sass": "^1.48.0"
+  },
+  "dependencies": {
+    "posthtml-doctype": "^1.1.1"
+  }
+}

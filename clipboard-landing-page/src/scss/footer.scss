@@ -1,0 +1,130 @@
+@import '_constants.scss';
+
+.footer {
+  margin-top: 170px;
+  padding-bottom: 53px;
+
+  &-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  &__links {
+    margin-top: 40px;
+    text-align: center;
+
+    li {
+      list-style: none;
+      cursor: pointer;
+
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      margin-top: 20px;
+      color: #4c545c;
+      font-weight: $weight-normal;
+      line-height: 30px;
+      letter-spacing: 0.135px;
+    }
+  }
+
+  &__social-icons {
+    margin-top: 50px;
+    display: flex;
+    gap: 50px;
+  }
+
+  @media screen and (min-width: $desktop-min) and (max-width: $desktop-max) {
+    &-container {
+      position: relative;
+      min-width: 850px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__links {
+      position: absolute;
+      top: 0;
+      left: 130px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 80px;
+      margin-top: 0;
+      text-align: start;
+
+      li {
+        list-style: none;
+        flex: 1 1 30px;
+        cursor: pointer;
+        margin: 0 30px;
+
+        &:not(:first-child) {
+          margin-top: 0;
+        }
+      }
+
+      a {
+        margin-top: 0;
+      }
+    }
+
+    &__social-icons {
+      margin-top: 0;
+      gap: 50px;
+    }
+  }
+
+  @media screen and (min-width: $large-min) {
+    &-container {
+      position: relative;
+      min-width: 1110px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__links {
+      position: absolute;
+      top: 0;
+      left: 180px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 100px;
+      margin-top: 0;
+      text-align: start;
+
+      li {
+        list-style: none;
+        flex: 1 1 40px;
+        cursor: pointer;
+        margin: 0 32px;
+
+        &:not(:first-child) {
+          margin-top: 0;
+        }
+      }
+
+      a {
+        margin-top: 0;
+      }
+    }
+
+    &__social-icons {
+      margin-top: 0;
+      gap: 50px;
+    }
+  }
+}

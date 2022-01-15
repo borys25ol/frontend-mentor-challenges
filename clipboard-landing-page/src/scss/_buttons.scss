@@ -1,0 +1,33 @@
+.download__button {
+  margin-top: 48px;
+  width: 311px;
+  height: 56px;
+  border-radius: 2rem;
+  color: white;
+  font-weight: $weight-semi-bold;
+  line-height: 167%;
+  text-align: center;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+
+  &_green {
+    background-color: $cyan-strong;
+    box-shadow: 0px 10px 20px 0px $cyan-shaddow;
+  }
+
+  &_blue {
+    background-color: $blue-light;
+    box-shadow: 0px -3px 0px 0px $blue-shaddow inset;
+  }
+
+  @media only screen and (min-width: $desktop-min) {
+    width: 227px;
+    height: 56px;
+
+    &:hover {
+      opacity: 0.75;
+      transition: 0.5s ease;
+    }
+  }
+}

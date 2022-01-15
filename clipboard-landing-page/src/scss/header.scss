@@ -1,0 +1,25 @@
+.header {
+  &__logo {
+    height: 363px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./../img/bg-header-mobile.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    mix-blend-mode: normal;
+  }
+
+  &__title {
+    margin-top: -48px;
+  }
+}
+
+@media screen and (min-width: $desktop-min) {
+  .header {
+    &__logo {
+      background-image: url('./../img/bg-header-desktop.png');
+    }
+  }
+}

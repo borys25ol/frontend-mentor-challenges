@@ -9,7 +9,7 @@
 ## Technologies:
 
 - HTML5
-- CSS
+- CSS3
 - Flexbox
 
 ### Level: 1 (NEWBIE)
@@ -24,9 +24,29 @@
 
 ## Technologies:
 
-- HTMLt
-- CSS
+- HTML5
+- CSS3
 - Flexbox
 - JavaScript
 
 ### Level: 1 (NEWBIE)
+
+#
+
+# 3) Clipboard landing page
+
+### Challenge link: [click](https://www.frontendmentor.io/challenges/clipboard-landing-page-5cc9bccd6c4c91111378ecb9)
+
+### Live solution link: [click](https://borys25ol.github.io/frontend-mentor-challenges/clipboard-landing-page/)
+
+## Technologies:
+
+- HTML5
+- SCSS
+- Flexbox
+- FontAwesome
+- Parcel
+- Posthtml include
+- Mobile-first workflow
+
+### Level: 2 (Junior)
