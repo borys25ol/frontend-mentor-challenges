@@ -364,13 +364,12 @@ h3.heading-title {
   margin-top: 186px;
 }
 .access img {
-  width: auto;
-  min-height: 180px;
+  width: 100%;
   margin-top: 65px;
 }
 
 .workflow {
-  margin-top: 160px;
+  margin-top: 130px;
 }
 .workflow h3 {
   margin-bottom: 18px;
