@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
 * {
   margin: 0;
   padding: 0;
   color: #4c545d;
   box-sizing: border-box;
   font-size: 18px;
-  font-family: "Bai Jamjuree", sans-serif;
+  font-family: 'Bai Jamjuree', sans-serif;
   font-weight: 600;
 }
 
@@ -266,7 +266,7 @@ h3.heading-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("bg-header-mobile.f1d27f96.png");
+  background-image: url('bg-header-mobile.f1d27f96.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -278,7 +278,7 @@ h3.heading-title {
 
 @media screen and (min-width: 992px) {
   .header__logo {
-    background-image: url("bg-header-desktop.ff53d7d3.png");
+    background-image: url('bg-header-desktop.ff53d7d3.png');
   }
 }
 .tracking {
@@ -504,7 +504,9 @@ h3.heading-title {
 .footer__social-icons {
   margin-top: 50px;
   display: flex;
-  gap: 50px;
+}
+.footer__social-icons a {
+  margin: 0 25px;
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   .footer-container {
@@ -539,7 +541,6 @@ h3.heading-title {
   }
   .footer__social-icons {
     margin-top: 0;
-    gap: 50px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -576,6 +577,5 @@ h3.heading-title {
   }
   .footer__social-icons {
     margin-top: 0;
-    gap: 50px;
   }
 }

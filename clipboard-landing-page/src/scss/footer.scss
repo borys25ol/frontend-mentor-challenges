@@ -40,7 +40,10 @@
   &__social-icons {
     margin-top: 50px;
     display: flex;
-    gap: 50px;
+
+    a {
+      margin: 0 25px;
+    }
   }
 
   @media screen and (min-width: $desktop-min) and (max-width: $desktop-max) {
@@ -81,7 +84,6 @@
 
     &__social-icons {
       margin-top: 0;
-      gap: 50px;
     }
   }
 
@@ -124,7 +126,6 @@
 
     &__social-icons {
       margin-top: 0;
-      gap: 50px;
     }
   }
 }
