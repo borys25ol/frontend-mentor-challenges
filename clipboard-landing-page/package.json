@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html --open",
-    "build": "parcel build src/index.html --out-dir ./build --public-url=./build"
+    "build": "parcel build src/index.html --out-dir ./build --public-url build --no-source-maps --no-minify"
   },
   "author": "Borys Oliinyk",
   "license": "ISC",

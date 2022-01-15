@@ -1,1 +1,0 @@
-{"version":3,"sources":["js/script.js"],"names":["console","log"],"mappings":";AAAAA,QAAQC,IAAI","file":"script.d01accc6.js","sourceRoot":"../src","sourcesContent":["console.log('Main script has been executed!')\n"]}
