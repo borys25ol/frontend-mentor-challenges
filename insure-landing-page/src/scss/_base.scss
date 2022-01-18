@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+@import '_constants.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  color: $violet-very-dark;
+  font-family: $family-body;
+  box-sizing: border-box;
+  font-size: $fs-base;
+  font-weight: $weight-regular;
+}
+
+body {
+  font-family: $family-body;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $family-headings;
+}
+
+img.img {
+  min-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+i.fab {
+  color: $violet-dark-grayish;
+  font-size: 24px;
+}
+
+.wrapper {
+  min-width: 375px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+._container {
+  width: 92%;
+  min-width: 345px;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.hide-scroll {
+  overflow: hidden;
+}
+
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  ._container {
+    width: 90%;
+    min-width: 600px;
+    max-width: 800px;
+  }
+}
+
+@media screen and (min-width: $desktop-min) and (max-width: $desktop-max) {
+  ._container {
+    width: 84%;
+    min-width: 800px;
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width: $large-min) {
+  ._container {
+    width: 77%;
+    min-width: 1100px;
+    max-width: 1400px;
+  }
+}

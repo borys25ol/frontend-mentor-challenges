@@ -1,0 +1,140 @@
+.section {
+  &__container {
+    margin-top: 190px;
+  }
+
+  &__box {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+
+    &_item {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        margin: 35px 0;
+        font-size: 24px;
+        font-weight: $weight-bold;
+      }
+
+      p {
+        text-align: center;
+        font-weight: $weight-regular;
+        color: $violet-dark-grayish;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  h1 {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 2px;
+      background-color: $violet-dark-grayish;
+    }
+  }
+
+  &__banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    padding: 70px 35px;
+    background-color: $violet-dark;
+    z-index: 20;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 176px;
+      height: 317px;
+      top: 0;
+      right: 0;
+      background-image: url('./../img/bg-pattern-how-we-work-mobile.svg');
+      background-repeat: no-repeat;
+    }
+
+    h2 {
+      color: white;
+      text-align: center;
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    a {
+      margin-top: 40px;
+      color: white;
+    }
+  }
+
+  @media screen and (min-width: $desktop-min) {
+    h1 {
+      &::before {
+        display: none;
+      }
+    }
+
+    &__box {
+      margin-top: 85px;
+      flex-direction: row;
+
+      &_item {
+        margin: 0 10px;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        p {
+          text-align: start;
+        }
+      }
+    }
+
+    &__banner {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 70px 60px;
+
+      &::after {
+        z-index: 10;
+        content: '';
+        position: absolute;
+        width: 434px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-image: url('./../img/bg-pattern-how-we-work-desktop.svg');
+        background-repeat: no-repeat;
+      }
+
+      h2 {
+        max-width: 320px;
+        text-align: start;
+      }
+
+      a {
+        position: relative;
+        z-index: 30;
+        margin-top: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: $large-min) {
+    h1 {
+      margin-top: 130px;
+    }
+  }
+}

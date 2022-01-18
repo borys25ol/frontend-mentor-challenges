@@ -50,3 +50,24 @@
 - Mobile-first workflow
 
 ### Level: 2 (Junior)
+
+#
+
+# 4) Insure landing page
+
+### Challenge link: [click](https://www.frontendmentor.io/challenges/insure-landing-page-uTU68JV8)
+
+### Live solution link: [click](https://borys25ol.github.io/frontend-mentor-challenges/insure-landing-page/)
+
+## Technologies:
+
+- HTML5
+- SCSS
+- Flexbox
+- FontAwesome
+- Parcel
+- Posthtml include
+- Mobile-first workflow
+- JavaScript
+
+### Level: 2 (Junior)

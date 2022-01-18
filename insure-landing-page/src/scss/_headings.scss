@@ -1,0 +1,42 @@
+h1.heading {
+  font-size: 48px;
+  line-height: 1;
+  text-align: center;
+  color: white;
+
+  &.heading--black {
+    color: black;
+
+    &::after {
+      background-color: black;
+    }
+  }
+
+  @media screen and (min-width: $desktop-min) {
+    & {
+      position: relative;
+      font-size: 3em;
+      line-height: 1;
+      text-align: start;
+      color: white;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -40px;
+        left: 0;
+        width: 100px;
+        height: 2px;
+        background-color: white;
+      }
+    }
+  }
+
+  @media screen and (min-width: $large-min) {
+    font-size: 4em;
+
+    &::after {
+      width: 160px;
+    }
+  }
+}
