@@ -35,7 +35,7 @@ Mobile:
 
 ### Links
 
-- Live Site URL: [click](https://borys25ol.github.io/frontend-mentor-challenges/time-tracking-dashboard/)
+- Live Site URL: [click](https://time-tracking-dashboard-borys25ol.netlify.app/)
 
 ## My process
 
