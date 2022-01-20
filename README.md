@@ -71,3 +71,21 @@
 - JavaScript
 
 ### Level: 2 (Junior)
+
+#
+
+# 5) Time Tracking Dashboard
+
+### Challenge link: [click](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw)
+
+### Live solution link: [click](https://time-tracking-dashboard-borys25ol.netlify.app/)
+
+## Technologies:
+
+- React.js
+- HTML5
+- SCSS
+- Flexbox
+- Grid
+
+### Level: 2 (Junior)
