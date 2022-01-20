@@ -1,0 +1,12 @@
+.time-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 250px));
+  column-gap: 30px;
+  row-gap: 30px;
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: minmax(300px, 330px);
+    row-gap: 30px;
+    column-gap: 0;
+  }
+}
