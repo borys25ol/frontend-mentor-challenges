@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --family: 'Space Mono', monospace;
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --color-grey: #979797;
+  --color-blue: #0079ff;
+  --color-blue-hover: #60abff;
+  --color-white: #fff;
+}
+
+body[data-theme='light'] {
+  --color-text: #4b6a9b;
+  --color-bg: #f6f8ff;
+  --color-gb-block: #fefefe;
+  --color-heading: black;
+  --color-join: #697c9a;
+  --color-stats: #f6f8ff;
+}
+
+body[data-theme='dark'] {
+  --color-text: #ffffff;
+  --color-bg: #141d2f;
+  --color-gb-block: #1e2a47;
+  --color-heading: white;
+  --color-join: white;
+  --color-stats: #141d2f;
+}
+
+body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: var(--weight-regular);
+  background-color: var(--color-bg);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--family);
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: var(--weight-bold);
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+}
+
+h4 {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: var(--weight-regular);
+}
+
+p {
+  font-size: 13px;
+  line-height: 25px;
+}
+
+ul {
+  list-style: none;
+}
