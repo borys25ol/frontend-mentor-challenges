@@ -23,7 +23,7 @@ const FlexContainer = styled.div`
     padding: 40px;
   }
 
-  @media screen and (min-width: 991px) {
+  @media screen and (min-width: 1023px) {
     padding-bottom: 0;
   }
 `
@@ -104,7 +104,7 @@ const Body = styled.div`
   margin-top: 33px;
   width: 100%;
 
-  @media screen and (min-width: 991px) {
+  @media screen and (min-width: 1023px) {
     position: relative;
     left: 160px;
     bottom: 80px;
@@ -170,7 +170,7 @@ const UserInfo = styled.ul`
     grid-gap: 20px;
   }
 
-  @media screen and (min-width: 991px) {
+  @media screen and (min-width: 1023px) {
     margin-top: 45px;
   }
 `

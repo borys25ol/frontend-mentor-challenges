@@ -54,7 +54,7 @@ const Input = styled.input.attrs(props => {
     }
   }
 
-  @media screen and (min-width: 991px) {
+  @media screen and (min-width: 1023px) {
     max-width: 530px;
   }
 `
@@ -77,7 +77,7 @@ const NoResult = styled.span.attrs(props => {
     font-size: 15px;
   }
 
-  @media screen and (min-width: 991px) {
+  @media screen and (min-width: 1023px) {
     font-size: 18px;
   }
 `
