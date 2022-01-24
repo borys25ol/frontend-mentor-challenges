@@ -8,6 +8,14 @@ const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  & > svg {
+    cursor: pointer;
+
+    path {
+      fill: var(--color-text);
+    }
+  }
 `
 
 const Theme = styled.span`
@@ -19,23 +27,12 @@ const Theme = styled.span`
   text-transform: uppercase;
 `
 
-function ThemeIcon(component) {
-  const Icon = styled(component)`
-    cursor: pointer;
-
-    g {
-      fill: var(--color-text);
-    }
-  `
-  return <Icon />
-}
-
 function Header() {
   const [theme, setTheme] = useState('light')
 
   const iconsMap = {
-    light: ThemeIcon(SunIcon),
-    dark: ThemeIcon(MoonIcon),
+    light: <SunIcon />,
+    dark: <MoonIcon />,
   }
 
   const toggleTheme = () => {

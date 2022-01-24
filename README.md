@@ -89,3 +89,23 @@
 - Grid
 
 ### Level: 2 (Junior)
+
+#
+
+# 5) Github User Search App
+
+### Challenge link: [click](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6)
+
+### Live solution link: [click](https://github-user-search-app-borys25ol.netlify.app/)
+
+## Technologies:
+
+- React.js
+- HTML5
+- Styled Components
+- Flexbox
+- Grid
+- Mobile-first worflow
+- CSS-in-JS worflow
+
+### Level: 2 (Junior)

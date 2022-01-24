@@ -8,6 +8,7 @@
   --color-blue: #0079ff;
   --color-blue-hover: #60abff;
   --color-white: #fff;
+  --color-not-available: #D2D9E6
 }
 
 body[data-theme='light'] {

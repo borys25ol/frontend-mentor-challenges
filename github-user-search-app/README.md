@@ -1,6 +1,78 @@
-# Getting Started with Create React App
+# Frontend Mentor - GitHub user search app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Design preview for the GitHub user search app coding challenge](./design/preview.jpg)
+
+This is a solution to the [Github user search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+
+
+## Table of contents
+
+- [Frontend Mentor - GitHub user search app](#frontend-mentor---github-user-search-app)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshots](#screenshots)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+  - [Author](#author)
+  - [Available Scripts](#available-scripts)
+    - [`yarn start`](#yarn-start)
+    - [`yarn test`](#yarn-test)
+    - [`yarn build`](#yarn-build)
+    - [`yarn eject`](#yarn-eject)
+  - [Learn More](#learn-more)
+    - [Code Splitting](#code-splitting)
+    - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+    - [Making a Progressive Web App](#making-a-progressive-web-app)
+    - [Advanced Configuration](#advanced-configuration)
+    - [Deployment](#deployment)
+    - [`yarn build` fails to minify](#yarn-build-fails-to-minify)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Search for GitHub users by their username
+- See relevant user information based on their search
+- Switch between light and dark themes
+
+### Screenshots
+Desktop:
+![Desktop](./screenshots/Desktop.png)
+
+Tablet:
+![Tablet](./screenshots/Tablet.png)
+
+Mobile:
+![Mobile](./screenshots/Mobile.png)
+
+### Links
+
+- Live Site URL: [click](https://github-user-search-app-borys25ol.netlify.app/)
+
+## My process
+
+### Built with
+
+- React.js
+- HTML5
+- Styled Components
+- Flexbox
+- Grid
+- Mobile First Worflow
+- CSS-In-JS Worflow
+
+## Author
+
+- GitHub - [borys25ol](https://github.com/borys25ol)
+- LinkedIn [Borys Oliinyk](https://www.linkedin.com/in/borys-oliinyk-872a73158/)
+- Frontend Mentor - [@borys25ol](https://www.frontendmentor.io/profile/borys25ol)
+
 
 ## Available Scripts
 

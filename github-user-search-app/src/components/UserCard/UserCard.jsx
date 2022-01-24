@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import user from './../../assets/user.png'
-
 import { ReactComponent as LocationIcon } from './../../assets/icon-location.svg'
 import { ReactComponent as WebsiteIcon } from './../../assets/icon-website.svg'
 import { ReactComponent as TwitterIcon } from './../../assets/icon-twitter.svg'
@@ -14,27 +12,73 @@ const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 15px;
   background-color: var(--color-gb-block);
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
   border-radius: 15px;
+
+  @media screen and (min-width: 767px) {
+    margin-top: 24px;
+    padding: 40px;
+  }
+
+  @media screen and (min-width: 991px) {
+    padding-bottom: 0;
+  }
 `
 
 const Header = styled.div`
   display: flex;
 
-  h4:first-child {
-    color: var(--color-blue);
+  @media screen and (min-width: 1023px) {
+    width: 100%;
+
+    & > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+`
+
+const Name = styled.h3`
+  @media screen and (min-width: 767px) {
+    font-size: 26px;
+    line-height: 38px;
+    margin-bottom: 2px;
   }
 `
 
 const Username = styled.h4`
+  a {
+    color: var(--color-blue);
+  }
+
+  @media screen and (min-width: 767px) {
+    font-size: 16px;
+    line-height: 19.25px;
+    margin-bottom: 4px;
+  }
+`
+
+const GithubLink = styled.a.attrs(props => {
+  return {
+    href: `https://github.com/${props.username}`,
+  }
+})`
   color: var(--color-blue);
+  text-decoration: none;
 `
 
 const Join = styled.h4`
   color: var(--color-join);
+
+  @media screen and (min-width: 767px) {
+    font-size: 15px;
+    line-height: 22px;
+  }
 `
 
 const UserImg = styled.img.attrs(props => {
@@ -43,13 +87,35 @@ const UserImg = styled.img.attrs(props => {
     alt: props.alt,
   }
 })`
+  display: block;
   margin-right: 19px;
   width: 70px;
   height: 70px;
+  border-radius: 50%;
+
+  @media screen and (min-width: 767px) {
+    width: 117px;
+    height: 117px;
+    margin-right: 41px;
+  }
 `
 
 const Body = styled.div`
   margin-top: 33px;
+  width: 100%;
+
+  @media screen and (min-width: 991px) {
+    position: relative;
+    left: 160px;
+    bottom: 80px;
+    width: 480px;
+  }
+`
+
+const Bio = styled.p`
+  @media screen and (min-width: 767px) {
+    font-size: 15px;
+  }
 `
 
 const UserStats = styled.div`
@@ -59,6 +125,11 @@ const UserStats = styled.div`
   justify-content: center;
   border-radius: 10px;
   background-color: var(--color-stats);
+
+  @media screen and (min-width: 767px) {
+    padding: 15px 96px 17px 32px;
+    justify-content: space-between;
+  }
 `
 
 const StatItem = styled.div`
@@ -70,27 +141,98 @@ const StatItem = styled.div`
 
   span {
     font-size: 11px;
+  }
 
-    &:nth-child(2) {
+  @media screen and (min-width: 767px) {
+    width: 72px;
+
+    span {
+      font-size: 13px;
+      line-height: 19.25px;
+    }
+
+    h3 {
+      font-size: 22px;
+      line-height: 33px;
     }
   }
 `
 
-const UserLinks = styled.ul`
+const UserInfo = styled.ul`
   margin-top: 24px;
+
+  @media screen and (min-width: 767px) {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    grid-gap: 20px;
+  }
+
+  @media screen and (min-width: 991px) {
+    margin-top: 45px;
+  }
 `
 
-const ListItem = styled.li`
+const ListItem = styled.li.attrs(props => {
+  return {
+    color: props.available ? '--color-text' : '--color-grey',
+  }
+})`
+  display: flex;
+  align-items: center;
   margin-bottom: 17px;
 
   &:last-child {
     margin-bottom: 0px;
   }
+
+  & > * {
+    font-size: 13px;
+    line-height: 19.25px;
+    color: var(${props => props.color});
+  }
+
+  & > svg path {
+    fill: var(${props => props.color});
+  }
+
+  & > svg path {
+    fill: var(${props => props.color});
+  }
+
+  @media screen and (min-width: 767px) {
+    margin-bottom: 0;
+
+    & > * {
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
 `
 
 const Link = styled.a.attrs(props => {
   return {
-    href: props.href,
+    href: props.href || null,
+    margin: props.margin,
+  }
+})`
+  display: inline-block;
+  text-decoration: none;
+  margin-left: ${props => props.margin}px;
+
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    ${props =>
+      props.href ? 'border-bottom: 1px solid var(--color-text)' : ''};
+    transition: 0.3s ease;
+  }
+`
+
+const Info = styled.span.attrs(props => {
+  return {
     margin: props.margin,
   }
 })`
@@ -98,54 +240,57 @@ const Link = styled.a.attrs(props => {
   margin-left: ${props => props.margin}px;
 `
 
-function UserCard() {
+function UserCard({ data }) {
   return (
     <FlexContainer>
       <Header>
-        <UserImg src={user} alt='user' />
+        <UserImg src={data.avatartUrl} alt='user' />
         <div>
-          <h3>The Octocat</h3>
-          <Username>@octobar</Username>
-          <Join>Joined 25 Jan 2011</Join>
+          <div>
+            <Name>{data.name}</Name>
+            <Username>
+              <GithubLink username={data.login}>@{data.login}</GithubLink>
+            </Username>
+          </div>
+          <Join>Joined {data.joined}</Join>
         </div>
       </Header>
       <Body>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-          Quisque volutpat mattis eros.
-        </p>
+        <Bio>{data.bio || 'This profile has no bio'}</Bio>
         <UserStats>
           <StatItem>
             <span>Repos</span>
-            <h3>8</h3>
+            <h3>{data.repos}</h3>
           </StatItem>
           <StatItem>
             <span>Followers</span>
-            <h3>3938</h3>
+            <h3>{data.followers}</h3>
           </StatItem>
           <StatItem>
             <span>Following</span>
-            <h3>9</h3>
+            <h3>{data.following}</h3>
           </StatItem>
         </UserStats>
-        <UserLinks>
-          <ListItem>
+        <UserInfo>
+          <ListItem available={!!data.location}>
             <LocationIcon />
-            <Link margin={19}>San Francisco</Link>
+            <Info margin={19}>{data.location || 'Not Available'}</Info>
           </ListItem>
-          <ListItem>
+          <ListItem available={!!data.blog}>
             <WebsiteIcon />
-            <Link margin={13}>https://github.blog</Link>
+            <Link margin={13} href={data.blog}>
+              {data.blog || 'Not Available'}
+            </Link>
           </ListItem>
-          <ListItem>
+          <ListItem available={!!data.twitterUsername}>
             <TwitterIcon />
-            <Link margin={13}>Not Available</Link>
+            <Info margin={13}>{data.twitterUsername || 'Not Available'}</Info>
           </ListItem>
-          <ListItem>
+          <ListItem available={!!data.company}>
             <ConpanyIcon />
-            <Link margin={13}>@github</Link>
+            <Info margin={13}>{data.company || 'Not Available'}</Info>
           </ListItem>
-        </UserLinks>
+        </UserInfo>
       </Body>
     </FlexContainer>
   )
