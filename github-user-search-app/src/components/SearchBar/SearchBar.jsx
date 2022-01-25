@@ -115,6 +115,11 @@ function SearchBar({
 }) {
   const inputElelemt = useRef(null)
 
+  const handleInput = () => {
+    handleSearch()
+    inputElelemt.current.value = ''
+  }
+
   return (
     <FlexContainer>
       <Icon />
@@ -126,15 +131,10 @@ function SearchBar({
           inputElelemt.current.value = e.target.value
         }}
         onFocus={() => setShowError(false)}
+        onKeyPress={e => e.key === 'Enter' && handleInput()}
       />
       {!disabled && <NoResult active={showError}>No Results</NoResult>}
-      <Button
-        disable={disabled}
-        onClick={() => {
-          handleSearch()
-          inputElelemt.current.value = ''
-        }}
-      >
+      <Button disable={disabled} onClick={() => handleInput()}>
         Search
       </Button>
     </FlexContainer>
