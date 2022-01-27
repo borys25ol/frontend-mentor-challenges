@@ -112,7 +112,7 @@
 
 #
 
-# 6) Github User Search App
+# 7) Clock App
 
 ### Challenge link: [click](https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM)
 
