@@ -63,6 +63,9 @@ const Location = styled.h3`
 `
 
 const ShowButton = styled.button`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 115px;
   padding: 3px 4px 4px 17px;
   margin-bottom: 40px;
@@ -76,6 +79,7 @@ const ShowButton = styled.button`
     justify-content: center;
 
     &:first-child {
+      color: var(--color-black-light);
       margin-top: 2px;
       opacity: 50%;
     }
@@ -180,10 +184,8 @@ function Time({ handleClick }) {
           handleClick()
         }}
       >
-        <FlexContainer alignItems='center' justifyContent='space-between'>
-          <span className='btn'>{showMap[show].text}</span>
-          <span>{showMap[show].icon}</span>
-        </FlexContainer>
+        <span className='btn'>{showMap[show].text}</span>
+        <span>{showMap[show].icon}</span>
       </ShowButton>
     </Wrapper>
   )
