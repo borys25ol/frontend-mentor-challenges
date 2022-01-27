@@ -92,7 +92,7 @@
 
 #
 
-# 5) Github User Search App
+# 6) Github User Search App
 
 ### Challenge link: [click](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6)
 
@@ -109,3 +109,23 @@
 - CSS-in-JS worflow
 
 ### Level: 2 (Junior)
+
+#
+
+# 6) Github User Search App
+
+### Challenge link: [click](https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM)
+
+### Live solution link: [click](https://clock-app-borys25ol.netlify.app/)
+
+## Technologies:
+
+- React.js
+- HTML5
+- Styled Components
+- Flexbox
+- Mobile First Worflow
+- CSS-In-JS Worflow
+- External APIs
+
+### Level: 3 (Intermediate)
