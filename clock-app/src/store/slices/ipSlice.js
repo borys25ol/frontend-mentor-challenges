@@ -16,8 +16,8 @@ export const fetchIp = createAsyncThunk(
       dispatch(
         setInfo({
           currentIp: data.ip,
-          city: data.city,
-          countryCode: data.country_code,
+          city: data.location.city,
+          countryCode: data.location.country,
         })
       )
       dispatch(fetchCurrentDatetime(data.ip))
