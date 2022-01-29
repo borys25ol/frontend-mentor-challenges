@@ -37,7 +37,7 @@ const IconConntainer = styled.span`
   width: 20px;
   height: 20px;
   position: absolute;
-  right: -20px;
+  right: -30px;
   top: 0;
   cursor: pointer;
 `

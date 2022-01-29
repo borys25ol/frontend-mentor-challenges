@@ -39,6 +39,7 @@ body[data-theme='night'] {
   --color-more-section-text: #fff;
 
   background-image: var(--image-night-theme);
+  border: 2px solid black;
 }
 
 body {

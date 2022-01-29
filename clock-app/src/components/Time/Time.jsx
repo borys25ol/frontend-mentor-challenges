@@ -7,7 +7,7 @@ import { ReactComponent as IconMoon } from './../../assets/icon-moon.svg'
 import { ReactComponent as IconArrowUp } from './../../assets/icon-arrow-up.svg'
 import { ReactComponent as IconArrowDown } from './../../assets/icon-arrow-down.svg'
 import { useTheme } from '../../hooks/useTheme'
-import { useDate } from '../../hooks/useDate'
+import { useTime } from '../../hooks/useTime'
 
 const Wrapper = styled.div`
   padding: 10px 25px;
@@ -120,10 +120,12 @@ const ShowButton = styled.button`
 function Time({ handleClick }) {
   const [show, setShow] = useState('hidden')
   const [width, setWidth] = useState(window.innerWidth)
-  const { dayPeriod } = useTheme()
-  const { hours, minutes } = useDate()
+
   const { timezoneAbbreviation } = useSelector(state => state.datetime)
   const { city, countryCode } = useSelector(state => state.ip)
+
+  const { dayPeriod } = useTheme()
+  const { hours, minutes } = useTime()
 
   const updateDimensions = () => {
     setWidth(window.innerWidth)

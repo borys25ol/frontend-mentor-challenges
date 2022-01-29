@@ -8,14 +8,7 @@ const Wrapper = styled.main`
   align-items: 'flex-start';
   justify-content: ${props => (props.active ? 'flex-end' : 'space-between')};
   background-color: var(--color-overlay);
-
-  @media screen and (min-width: 767px) {
-    /* max-width: 768px; */
-  }
-
-  @media screen and (min-width: 1023px) {
-    /* max-width: 1024px; */
-  }
+  border-color: transparent;
 `
 
 function Main({ children, active }) {
