@@ -1,19 +1,23 @@
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
+import { getDatePeriod } from '../utils/datetime'
+
 function useTheme() {
-  const { hours } = useSelector(state => state.datetime.datetime)
+  const [theme, setTheme] = useState(null)
+  const [dayPeriod, setDatePeriod] = useState(null)
+  const {
+    datetime: { hours },
+    status,
+  } = useSelector(state => state.datetime)
 
-  const theme = hours >= 5 && hours < 18 ? 'day' : 'night'
-
-  let dayPeriod = null
-
-  if (hours >= 5 && hours < 12) {
-    dayPeriod = 'morning'
-  } else if (hours > 12 && hours < 18) {
-    dayPeriod = 'afternoon'
-  } else {
-    dayPeriod = 'evening'
-  }
+  useEffect(() => {
+    if (status !== 'resolved') {
+      return
+    }
+    setTheme(hours >= 5 && hours < 18 ? 'day' : 'night')
+    setDatePeriod(getDatePeriod(hours))
+  }, [hours, status])
 
   return { theme, dayPeriod }
 }

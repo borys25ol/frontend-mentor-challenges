@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { ThreeDots } from 'react-loader-spinner'
 
 import { Main } from './components/Main'
 import { Time } from './components/Time'
@@ -13,8 +14,15 @@ function App() {
   const handleClick = () => setShow(!show)
 
   useEffect(() => {
+    if (!theme) {
+      return
+    }
     document.body.setAttribute('data-theme', theme)
   }, [theme])
+
+  if (!theme) {
+    return <ThreeDots color='black' wrapperClass='spinner' />
+  }
 
   return (
     <Main active={show}>

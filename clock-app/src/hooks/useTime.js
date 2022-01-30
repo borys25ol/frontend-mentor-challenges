@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { formatNumber } from '../utils/date'
+import { formatNumber } from '../utils/datetime'
 import { fetchIp } from '../store/slices/ipSlice'
 
 function useTime() {

@@ -120,12 +120,10 @@ const ShowButton = styled.button`
 function Time({ handleClick }) {
   const [show, setShow] = useState('hidden')
   const [width, setWidth] = useState(window.innerWidth)
-
-  const { timezoneAbbreviation } = useSelector(state => state.datetime)
-  const { city, countryCode } = useSelector(state => state.ip)
-
   const { dayPeriod } = useTheme()
   const { hours, minutes } = useTime()
+  const { timezoneAbbreviation } = useSelector(state => state.datetime)
+  const { city, countryCode } = useSelector(state => state.ip)
 
   const updateDimensions = () => {
     setWidth(window.innerWidth)
@@ -165,8 +163,12 @@ function Time({ handleClick }) {
     <Wrapper>
       <div>
         <FlexContainer>
-          {greetingMap[dayPeriod].icon}
-          <Text className='heading4'>{greetingMap[dayPeriod].text}</Text>
+          {dayPeriod && (
+            <>
+              {greetingMap[dayPeriod].icon}
+              <Text className='heading4'>{greetingMap[dayPeriod].text}</Text>
+            </>
+          )}
         </FlexContainer>
         <FlexContainer alignItems='flex-end'>
           {hours && minutes && (
