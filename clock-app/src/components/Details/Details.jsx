@@ -99,7 +99,9 @@ function Details({ active }) {
         </ListItem>
         <ListItem>
           <ItemName className='heading6'>day of the week</ItemName>
-          <ItemValue className='heading2'>{dayOfWeek}</ItemValue>
+          <ItemValue className='heading2'>
+            {dayOfWeek === 0 ? 7 : dayOfWeek}
+          </ItemValue>
         </ListItem>
         <ListItem>
           <ItemName className='heading6'>week number</ItemName>
