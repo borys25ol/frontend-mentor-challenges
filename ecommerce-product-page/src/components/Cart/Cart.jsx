@@ -92,6 +92,7 @@ const CheckoutButton = styled.button`
   padding: 22px 119px 18px 120px;
   color: var(--white);
   background-color: var(--orange);
+  font-weight: var(--fw-bold);
   border: 0;
   border-radius: 10px;
 `
@@ -102,7 +103,7 @@ const EmptyCart = styled.span`
 `
 
 function Cart({ cartOpened, handleCartClick }) {
-  const isEmpty = true
+  const isEmpty = false
 
   return (
     <CartContainer>
