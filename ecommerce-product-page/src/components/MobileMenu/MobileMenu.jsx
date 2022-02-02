@@ -37,9 +37,15 @@ const Menu = styled.div`
   width: 250px;
   height: 100%;
   background-color: var(--white);
+
+  @media screen and (min-width: 768px) {
+    padding-top: 43px;
+    width: 350px;
+  }
 `
 
 const CloseButton = styled.span`
+  margin-top: 23px;
   margin-bottom: 1px;
   cursor: pointer;
 
@@ -59,6 +65,10 @@ const Menuitem = styled.li`
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 50px;
+  }
 `
 
 const MenuLink = styled.a.attrs(props => {
@@ -71,6 +81,10 @@ const MenuLink = styled.a.attrs(props => {
   color: var(--black);
   font-weight: var(--fw-bold);
   text-decoration: none;
+
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+  }
 `
 
 function MobileMenu({ navItems, menuOpened, handleMenuClick }) {

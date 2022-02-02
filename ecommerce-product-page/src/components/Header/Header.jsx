@@ -20,11 +20,11 @@ const Wrapper = styled.div`
 `
 
 const FlexItem = styled.div`
-  height: 71px;
   display: flex;
   align-items: center;
 
   @media screen and (min-width: 1024px) {
+    height: 71px;
     min-width: 150px;
     position: relative;
     align-items: flex-start;
@@ -54,6 +54,13 @@ const Avatar = styled.img.attrs(props => {
     right: 0;
     width: 50px;
     height: 50px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: 0.3s;
+
+    &:hover {
+      border-color: var(--orange);
+    }
   }
 `
 

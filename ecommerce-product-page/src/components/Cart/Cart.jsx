@@ -20,10 +20,14 @@ const Wrapper = styled.div`
   min-width: 360px;
   width: 96vw;
   height: 256px;
-  right: -40px;
+  right: -63px;
   border-radius: 10px;
   background-color: var(--white);
   box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.503143);
+
+  @media screen and (min-width: 320px) and (max-width: 374px) {
+    min-width: 300px;
+  }
 
   @media screen and (min-width: 768px) {
     margin-left: 0;

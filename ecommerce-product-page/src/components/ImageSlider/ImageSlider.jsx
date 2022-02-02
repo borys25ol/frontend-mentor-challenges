@@ -10,6 +10,7 @@ import { ReactComponent as NextIcon } from 'assets/icons/icon-next.svg'
 
 const RugularWrapper = styled.div`
   position: relative;
+
   @media screen and (min-width: 1024px) {
     width: 445px;
     height: 445px;
@@ -134,6 +135,10 @@ const ThumbnailWrapper = styled.div`
 
   img {
     opacity: ${props => (props.active ? '0.25' : '1')};
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 `
 

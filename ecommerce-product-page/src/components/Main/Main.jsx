@@ -24,9 +24,15 @@ const Wrapper = styled.main`
 `
 
 const Content = styled.div`
+  padding-bottom: 84px;
   display: flex;
-  min-height: 740px;
-  padding: 91px 0 152px 48px;
+  flex-direction: column;
+
+  @media screen and (min-width: 1024px) {
+    padding: 91px 0 152px 48px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
 
 function Main({ children }) {
