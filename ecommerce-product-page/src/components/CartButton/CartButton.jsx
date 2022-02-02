@@ -8,7 +8,6 @@ const Button = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  margin-right: 22px;
   border: 0;
   background-color: transparent;
   outline: 0;

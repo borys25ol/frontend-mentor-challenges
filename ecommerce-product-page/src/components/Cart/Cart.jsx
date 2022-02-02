@@ -2,25 +2,33 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import ProductImage from 'assets/images/image-product-1-thumbnail.jpg'
-import { ReactComponent as IconRemove } from 'assets/icons/icon-delete.svg'
 import { CartButton } from 'components/CartButton'
+import { ReactComponent as IconRemove } from 'assets/icons/icon-delete.svg'
+import ProductImage from 'assets/images/image-product-1-thumbnail.jpg'
 
 const CartContainer = styled.div`
   position: relative;
+  z-index: 20;
 `
 
 const Wrapper = styled.div`
   padding: 0 24px;
   display: ${props => (props.opened ? 'flex' : 'none')};
   flex-direction: column;
-  margin-top: 33px;
+  margin-top: 35px;
   position: absolute;
-  width: 360px;
+  min-width: 360px;
+  width: 96vw;
   height: 256px;
-  border: 1px solid black;
   right: -40px;
   border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.503143);
+
+  @media screen and (min-width: 768px) {
+    margin-left: 0;
+    width: 100%;
+  }
 `
 
 const Header = styled.div`
@@ -84,26 +92,38 @@ const CheckoutButton = styled.button`
   border-radius: 10px;
 `
 
+const EmptyCart = styled.span`
+  text-align: center;
+  margin-top: 77px;
+`
+
 function Cart({ cartOpened, handleCartClick }) {
+  const isEmpty = true
+
   return (
     <CartContainer>
       <CartButton handleCartClick={handleCartClick} />
       <Wrapper opened={cartOpened}>
         <Header>Cart</Header>
-        <CartItem>
-          <ItemImage src={ProductImage} alt='product image' />
-          <ItemInfo>
-            <ProductName>Fall Limited Edition Sneakers</ProductName>
-            <PriceContainer>
-              <ProductPrice>$125.00</ProductPrice>
-              <Separator>x</Separator>
-              <Quantity>3</Quantity>
-              <TotalPrice>$375.00</TotalPrice>
-            </PriceContainer>
-          </ItemInfo>
-          <IconRemove />
-        </CartItem>
-        <CheckoutButton>Checkout</CheckoutButton>
+        {!isEmpty && (
+          <>
+            <CartItem>
+              <ItemImage src={ProductImage} alt='product cart image' />
+              <ItemInfo>
+                <ProductName>Fall Limited Edition Sneakers</ProductName>
+                <PriceContainer>
+                  <ProductPrice>$125.00</ProductPrice>
+                  <Separator>x</Separator>
+                  <Quantity>3</Quantity>
+                  <TotalPrice>$375.00</TotalPrice>
+                </PriceContainer>
+              </ItemInfo>
+              <IconRemove />
+            </CartItem>
+            <CheckoutButton>Checkout</CheckoutButton>
+          </>
+        )}
+        {isEmpty && <EmptyCart>Your cart is empty.</EmptyCart>}
       </Wrapper>
     </CartContainer>
   )

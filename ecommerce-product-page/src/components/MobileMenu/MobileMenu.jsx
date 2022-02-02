@@ -22,6 +22,7 @@ const MenuWrapper = styled.div`
   height: 100%;
   background-color: var(--black-background);
   transition: 0.3s ease-out;
+  z-index: 30;
 
   @media screen and (min-width: 1024px) {
     display: none;

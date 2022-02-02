@@ -8,14 +8,27 @@ import { DesktopMenu } from 'components/DesktopMenu'
 import { Cart } from 'components/Cart'
 
 const Wrapper = styled.div`
+  padding-bottom: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (min-width: 1024px) {
+    padding-bottom: 0;
+    border-bottom: 1px solid #e4e9f2;
+  }
 `
 
 const FlexItem = styled.div`
+  height: 71px;
   display: flex;
   align-items: center;
+
+  @media screen and (min-width: 1024px) {
+    min-width: 150px;
+    position: relative;
+    align-items: flex-start;
+  }
 `
 
 const LogoWrapper = styled.div`
@@ -28,11 +41,20 @@ const LogoWrapper = styled.div`
 
 const Avatar = styled.img.attrs(props => {
   return {
-    scr: props.src,
+    src: props.src,
   }
 })`
   width: 24px;
   height: 24px;
+  margin-left: 22px;
+
+  @media screen and (min-width: 1024px) {
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+    width: 50px;
+    height: 50px;
+  }
 `
 
 function Header() {

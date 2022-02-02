@@ -8,15 +8,24 @@ const MenuList = styled.ul`
   list-style: none;
 
   @media screen and (min-width: 1024px) {
+    padding-bottom: 0;
     display: flex;
+    height: 100%;
   }
 `
 
 const Menuitem = styled.li`
+  flex-grow: 1;
   margin-right: 33px;
+  border-bottom: 4px solid transparent;
 
   &:last-child {
     margin-right: 0;
+  }
+
+  &:hover {
+    transition: 0.3s ease-in;
+    border-bottom: 4px solid var(--orange);
   }
 `
 
@@ -29,6 +38,10 @@ const MenuLink = styled.a.attrs(props => {
   line-height: 26px;
   color: inherit;
   text-decoration: none;
+
+  &:hover {
+    color: var(--black);
+  }
 `
 
 function DesktopMenu({ navItems }) {
