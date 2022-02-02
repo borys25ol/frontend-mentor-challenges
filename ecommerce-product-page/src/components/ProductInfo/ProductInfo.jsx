@@ -152,6 +152,7 @@ const AddToCartButton = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
+    padding: 22px 0 18px 0;
     flex-basis: 272px;
     font-size: 16px;
 

@@ -40,6 +40,10 @@ const InputValue = styled.div`
   @media screen and (min-width: 768px) {
     font-size: 20px;
   }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 16px;
+  }
 `
 
 function CartInput() {
