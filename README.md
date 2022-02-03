@@ -129,3 +129,22 @@
 - External APIs
 
 ### Level: 3 (Intermediate)
+
+#
+
+# 8) Ecommerce Product Page
+
+### Challenge link: [click](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6)
+
+### Live solution link: [click](https://ecommerce-product-page-borys25ol.netlify.app/)
+
+## Technologies:
+
+- React.js
+- HTML5
+- Styled Components
+- Flexbox
+- Mobile First Worflow
+- CSS-In-JS Worflow
+
+### Level: 3 (Intermediate)
