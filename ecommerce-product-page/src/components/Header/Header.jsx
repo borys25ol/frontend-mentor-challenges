@@ -25,7 +25,7 @@ const FlexItem = styled.div`
 
   @media screen and (min-width: 1024px) {
     height: 71px;
-    min-width: 150px;
+    min-width: 120px;
     position: relative;
     align-items: flex-start;
   }
@@ -49,6 +49,7 @@ const Avatar = styled.img.attrs(props => {
   margin-left: 22px;
 
   @media screen and (min-width: 1024px) {
+    margin-left: 0px;
     position: absolute;
     bottom: 50%;
     right: 0;
