@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { CartForm } from 'components/CartForm'
+import { formatPrice } from 'utils/priceFormater'
 
 const Wrapper = styled.div`
   padding-top: 24px;
@@ -130,10 +131,10 @@ function ProductInfo({ product }) {
       <Description>{product.description}</Description>
       <PriceWrapper>
         <DiscountWrapper>
-          <Price>${product.discountPrice}</Price>
+          <Price>{formatPrice(product.discountPrice)}</Price>
           <Percent>{product.discount * 100}%</Percent>
         </DiscountWrapper>
-        <RegularPrice>${product.price}</RegularPrice>
+        <RegularPrice>{formatPrice(product.price)}</RegularPrice>
       </PriceWrapper>
       <FormWrapper>
         <CartForm productId={product.id} />

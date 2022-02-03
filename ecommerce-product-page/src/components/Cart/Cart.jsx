@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { CartButton } from 'components/CartButton'
 import { useShoppingCart } from 'hooks/useShoppingCart'
 import { ReactComponent as IconRemove } from 'assets/icons/icon-delete.svg'
+import { formatPrice } from 'utils/priceFormater'
 
 const CartContainer = styled.div`
   position: relative;
@@ -111,7 +112,7 @@ function Cart({ cartOpened, handleCartClick }) {
   const { totalItems, cartItems, handleRemoveFromCart } = useShoppingCart()
 
   const calculateTotalPrice = (price, quantity) => {
-    return price * quantity
+    return formatPrice(price * quantity)
   }
 
   return (
@@ -127,11 +128,12 @@ function Cart({ cartOpened, handleCartClick }) {
                 <ItemInfo>
                   <ProductName>{cartItem.name}</ProductName>
                   <PriceContainer>
-                    <ProductPrice>${cartItem.productPrice}</ProductPrice>
+                    <ProductPrice>
+                      {formatPrice(cartItem.productPrice)}
+                    </ProductPrice>
                     <Separator>x</Separator>
                     <Quantity>{cartItem.quantity}</Quantity>
                     <TotalPrice>
-                      $
                       {calculateTotalPrice(
                         cartItem.productPrice,
                         cartItem.quantity
