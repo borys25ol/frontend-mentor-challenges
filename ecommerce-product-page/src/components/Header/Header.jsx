@@ -114,7 +114,7 @@ function Header() {
       </FlexItem>
       <FlexItem>
         <Cart cartOpened={cartOpened} handleCartClick={togleCart} />
-        <Avatar src={AvatarImage} />
+        <Avatar src={AvatarImage} alt='user-avatat' />
       </FlexItem>
     </Wrapper>
   )
