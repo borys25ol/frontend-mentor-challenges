@@ -31,7 +31,7 @@ const Content = styled.div`
   @media screen and (min-width: 1024px) {
     padding: 91px 0 152px 48px;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 `
 

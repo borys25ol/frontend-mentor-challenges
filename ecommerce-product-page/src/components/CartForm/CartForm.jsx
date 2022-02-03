@@ -9,19 +9,19 @@ import { useShoppingCart } from 'hooks/useShoppingCart'
 
 const QuantityInput = styled.div`
   margin-top: 24px;
-  padding: 0 24px;
+  padding: 18px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--blue-light-grayish);
 
   @media screen and (min-width: 768px) {
-    padding: 6px 24px;
-    margin-top: 3px;
     flex-basis: 357px;
     align-items: flex-start;
   }
 
   @media screen and (min-width: 1024px) {
+    margin-top: 0;
     flex-basis: 157px;
   }
 `
@@ -51,6 +51,7 @@ const InputValue = styled.div`
 
 const AddToCartButton = styled.div`
   margin-top: 38px;
+  margin-left: 16px;
   padding: 22px 0 18px 0;
   display: flex;
   justify-content: center;
@@ -79,7 +80,7 @@ const AddToCartButton = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    padding: 22px 0 18px 0;
+    padding: 20px 0 16px 0;
     flex-basis: 272px;
     font-size: 16px;
 

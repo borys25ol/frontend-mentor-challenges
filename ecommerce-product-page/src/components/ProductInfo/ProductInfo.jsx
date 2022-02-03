@@ -9,6 +9,9 @@ const Wrapper = styled.div`
   padding-top: 24px;
 
   @media screen and (min-width: 1024px) {
+    padding-top: 0;
+    margin-top: 62px;
+    margin-left: 125px;
     flex-basis: 445px;
   }
 `
@@ -60,10 +63,6 @@ const PriceWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   font-weight: var(--fw-bold);
-
-  @media screen and (min-width: 768px) {
-    margin-top: 36px;
-  }
 
   @media screen and (min-width: 1024px) {
     flex-direction: column;
@@ -120,6 +119,7 @@ const FormWrapper = styled.div`
 
   @media screen and (min-width: 1024px) {
     margin-top: 32px;
+    justify-content: flex-start;
   }
 `
 
