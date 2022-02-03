@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import image1 from 'assets/images/image-product-1.jpg'
-import image2 from 'assets/images/image-product-2.jpg'
-import image3 from 'assets/images/image-product-3.jpg'
-import image4 from 'assets/images/image-product-4.jpg'
 import { ReactComponent as PreviousIcon } from 'assets/icons/icon-previous.svg'
 import { ReactComponent as NextIcon } from 'assets/icons/icon-next.svg'
 
@@ -151,11 +148,10 @@ const ImageThumbnail = styled.img`
   cursor: pointer;
 `
 
-function ImageSlider() {
+function ImageSlider({ images, thumbnails }) {
   const [width, setWidth] = useState(window.innerWidth)
   const [shift, setShift] = useState(0)
   const [modalActive, setModalActive] = useState(false)
-  const images = [image1, image2, image3, image4]
 
   const handlePreviousClick = () => {
     setShift(current =>
@@ -187,6 +183,7 @@ function ImageSlider() {
       <RugularWrapper onClick={() => handleSliderClick()}>
         <RegularSlider
           images={images}
+          thumbnails={thumbnails}
           isButtonActive={false}
           currentShift={shift}
           updateShift={setShift}
@@ -198,6 +195,7 @@ function ImageSlider() {
       <ModalWrapper active={modalActive && width >= 1024}>
         <RegularSlider
           images={images}
+          thumbnails={thumbnails}
           isButtonActive={true}
           currentShift={shift}
           updateShift={setShift}
@@ -215,6 +213,7 @@ function ImageSlider() {
 
 function RegularSlider({
   images,
+  thumbnails,
   isButtonActive,
   currentShift,
   updateShift,
@@ -243,7 +242,7 @@ function RegularSlider({
         <NextIcon />
       </NextButton>
       <Footer>
-        {images.map((image, index) => (
+        {thumbnails.map((image, index) => (
           <ThumbnailWrapper
             key={image}
             active={currentShift === index * 100}
@@ -257,6 +256,21 @@ function RegularSlider({
       </Footer>
     </>
   )
+}
+
+ImageSlider.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string),
+  thumnails: PropTypes.arrayOf(PropTypes.string),
+}
+
+RegularSlider.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string),
+  thumnails: PropTypes.arrayOf(PropTypes.string),
+  isButtonActive: PropTypes.bool,
+  currentShift: PropTypes.number,
+  updateShift: PropTypes.func,
+  handlePreviousClick: PropTypes.func,
+  handleNextClick: PropTypes.func,
 }
 
 export { ImageSlider }

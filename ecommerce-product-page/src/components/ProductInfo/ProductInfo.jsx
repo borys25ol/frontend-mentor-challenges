@@ -1,8 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { CartInput } from 'components/CartInput/CartInput'
-import { ReactComponent as CartIcon } from 'assets/icons/icon-cart.svg'
+import { CartForm } from 'components/CartForm'
 
 const Wrapper = styled.div`
   padding-top: 24px;
@@ -122,72 +122,28 @@ const FormWrapper = styled.div`
   }
 `
 
-const AddToCartButton = styled.div`
-  margin-top: 38px;
-  padding: 22px 0 18px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: var(--fw-bold);
-  color: var(--white);
-  background-color: var(--orange);
-  border-radius: 10px;
-  box-shadow: 0px 20px 50px -20px var(--orange);
-  transition: 0.4s;
-  cursor: pointer;
-
-  span {
-    padding-left: 15px;
-  }
-
-  svg path {
-    fill: var(--white);
-  }
-
-  @media screen and (min-width: 768px) {
-    padding: 28px 0 24px 0;
-    font-size: 20px;
-    margin-top: 0;
-    flex-basis: 372px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    padding: 22px 0 18px 0;
-    flex-basis: 272px;
-    font-size: 16px;
-
-    &:hover {
-      background-color: #ffab6a;
-    }
-  }
-`
-
-function ProductInfo() {
+function ProductInfo({ product }) {
   return (
     <Wrapper>
-      <Brand>Sneaker Company</Brand>
-      <Name>Fall Limited Edition Sneakers</Name>
-      <Description>
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they’ll withstand everything the
-        weather can offer.
-      </Description>
+      <Brand>{product.brand}</Brand>
+      <Name>{product.name}</Name>
+      <Description>{product.description}</Description>
       <PriceWrapper>
         <DiscountWrapper>
-          <Price>$125.00</Price>
-          <Percent>50%</Percent>
+          <Price>${product.discountPrice}</Price>
+          <Percent>{product.discount * 100}%</Percent>
         </DiscountWrapper>
-        <RegularPrice>$250.00</RegularPrice>
+        <RegularPrice>${product.price}</RegularPrice>
       </PriceWrapper>
       <FormWrapper>
-        <CartInput />
-        <AddToCartButton>
-          <CartIcon />
-          <span>Add to cart</span>
-        </AddToCartButton>
+        <CartForm productId={product.id} />
       </FormWrapper>
     </Wrapper>
   )
+}
+
+ProductInfo.propTypes = {
+  product: PropTypes.object,
 }
 
 export { ProductInfo }

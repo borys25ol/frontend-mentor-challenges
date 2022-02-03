@@ -1,1 +1,8 @@
-<svg width="12" height="7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a"/></svg>
+<svg width="12" height="9" viewBox="0 0 12 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.3571 3.33214C11.7134 3.33214 12 3.04554 12 2.68929V0.642857C12 0.286607 11.7134 0 11.3571 0H0.642857C0.286607 0 0 0.286607 0 0.642857V2.68929C0 3.04554 0.286607 3.33214 0.642857 3.33214H11.3571Z" fill="#FF7E1B"/>
+<mask id="mask0_0_301" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="4">
+<path d="M11.3571 3.33214C11.7134 3.33214 12 3.04554 12 2.68929V0.642857C12 0.286607 11.7134 0 11.3571 0H0.642857C0.286607 0 0 0.286607 0 0.642857V2.68929C0 3.04554 0.286607 3.33214 0.642857 3.33214H11.3571Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_0_301)">
+</g>
+</svg>

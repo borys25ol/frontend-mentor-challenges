@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { ReactComponent as IconCart } from 'assets/icons/icon-cart.svg'
 import PropTypes from 'prop-types'
+import { useShoppingCart } from 'hooks/useShoppingCart'
 
 const Button = styled.div`
   display: flex;
@@ -35,10 +36,12 @@ const Quantity = styled.span`
 `
 
 function CartButton({ handleCartClick }) {
+  const { totalItems } = useShoppingCart()
+
   return (
-    <Button active={true} onClick={() => handleCartClick()}>
+    <Button active={totalItems > 0} onClick={() => handleCartClick()}>
       <IconCart />
-      <Quantity>3</Quantity>
+      {totalItems > 0 && <Quantity>{totalItems}</Quantity>}
     </Button>
   )
 }

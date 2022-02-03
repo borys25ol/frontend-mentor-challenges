@@ -1,15 +1,33 @@
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+
 import { Header } from 'components/Header'
 import { Main, Content } from 'components/Main'
 import { ImageSlider } from 'components/ImageSlider'
 import { ProductInfo } from 'components/ProductInfo'
 
 function App() {
+  const { currentProduct } = useSelector(state => state.product)
+
+  useEffect(() => {
+    if (!currentProduct) {
+      return
+    }
+  }, [currentProduct])
+
   return (
     <Main>
       <Header />
       <Content>
-        <ImageSlider />
-        <ProductInfo />
+        {currentProduct && (
+          <>
+            <ImageSlider
+              images={currentProduct.images}
+              thumbnails={currentProduct.thumbnails}
+            />
+            <ProductInfo product={currentProduct} />
+          </>
+        )}
       </Content>
     </Main>
   )

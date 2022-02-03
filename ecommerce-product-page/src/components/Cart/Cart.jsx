@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { CartButton } from 'components/CartButton'
+import { useShoppingCart } from 'hooks/useShoppingCart'
 import { ReactComponent as IconRemove } from 'assets/icons/icon-delete.svg'
-import ProductImage from 'assets/images/image-product-1-thumbnail.jpg'
 
 const CartContainer = styled.div`
   position: relative;
@@ -12,14 +12,14 @@ const CartContainer = styled.div`
 `
 
 const Wrapper = styled.div`
-  padding: 0 24px;
+  padding: 0 24px 32px;
   display: ${props => (props.opened ? 'flex' : 'none')};
   flex-direction: column;
   margin-top: 35px;
   position: absolute;
   min-width: 360px;
   width: 96vw;
-  height: 256px;
+  min-height: 256px;
   right: -63px;
   border-radius: 10px;
   background-color: var(--white);
@@ -48,6 +48,7 @@ const CartItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  justify-content: flex-start;
 
   svg {
     cursor: pointer;
@@ -64,7 +65,11 @@ const ItemImage = styled.img.attrs(props => {
   height: 50px;
 `
 
-const ItemInfo = styled.div``
+const ItemInfo = styled.div`
+  flex-basis: 232px;
+  margin-left: 16px;
+  flex-grow: 1;
+`
 
 const ProductName = styled.p``
 
@@ -103,32 +108,49 @@ const EmptyCart = styled.span`
 `
 
 function Cart({ cartOpened, handleCartClick }) {
-  const isEmpty = false
+  const { totalItems, cartItems, handleRemoveFromCart } = useShoppingCart()
+
+  const calculateTotalPrice = (price, quantity) => {
+    console.log(price, quantity)
+    return price * quantity
+  }
 
   return (
     <CartContainer>
       <CartButton handleCartClick={handleCartClick} />
       <Wrapper opened={cartOpened}>
         <Header>Cart</Header>
-        {!isEmpty && (
+        {totalItems > 0 && (
           <>
-            <CartItem>
-              <ItemImage src={ProductImage} alt='product cart image' />
-              <ItemInfo>
-                <ProductName>Fall Limited Edition Sneakers</ProductName>
-                <PriceContainer>
-                  <ProductPrice>$125.00</ProductPrice>
-                  <Separator>x</Separator>
-                  <Quantity>3</Quantity>
-                  <TotalPrice>$375.00</TotalPrice>
-                </PriceContainer>
-              </ItemInfo>
-              <IconRemove />
-            </CartItem>
+            {cartItems.map(cartItem => (
+              <CartItem key={cartItem.id}>
+                <ItemImage src={cartItem.cartImage} alt='product cart image' />
+                <ItemInfo>
+                  <ProductName>{cartItem.name}</ProductName>
+                  <PriceContainer>
+                    <ProductPrice>${cartItem.productPrice}</ProductPrice>
+                    <Separator>x</Separator>
+                    <Quantity>{cartItem.quantity}</Quantity>
+                    <TotalPrice>
+                      $
+                      {calculateTotalPrice(
+                        cartItem.productPrice,
+                        cartItem.quantity
+                      )}
+                    </TotalPrice>
+                  </PriceContainer>
+                </ItemInfo>
+                <IconRemove
+                  onClick={() =>
+                    handleRemoveFromCart(cartItem.id, cartItem.quantity)
+                  }
+                />
+              </CartItem>
+            ))}
             <CheckoutButton>Checkout</CheckoutButton>
           </>
         )}
-        {isEmpty && <EmptyCart>Your cart is empty.</EmptyCart>}
+        {!totalItems && <EmptyCart>Your cart is empty.</EmptyCart>}
       </Wrapper>
     </CartContainer>
   )
