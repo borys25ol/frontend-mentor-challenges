@@ -111,7 +111,6 @@ function Cart({ cartOpened, handleCartClick }) {
   const { totalItems, cartItems, handleRemoveFromCart } = useShoppingCart()
 
   const calculateTotalPrice = (price, quantity) => {
-    console.log(price, quantity)
     return price * quantity
   }
 
