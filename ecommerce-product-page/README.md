@@ -1,3 +1,84 @@
+# Frontend Mentor - E-commerce product page solution
+
+This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Table of contents
+
+- [Frontend Mentor - E-commerce product page solution](#frontend-mentor---e-commerce-product-page-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+  - [Author](#author)
+- [Getting Started with Create React App](#getting-started-with-create-react-app)
+  - [Available Scripts](#available-scripts)
+    - [`yarn start`](#yarn-start)
+    - [`yarn test`](#yarn-test)
+    - [`yarn build`](#yarn-build)
+    - [`yarn eject`](#yarn-eject)
+  - [Learn More](#learn-more)
+    - [Code Splitting](#code-splitting)
+    - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+    - [Making a Progressive Web App](#making-a-progressive-web-app)
+    - [Advanced Configuration](#advanced-configuration)
+    - [Deployment](#deployment)
+    - [`yarn build` fails to minify](#yarn-build-fails-to-minify)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Open a lightbox gallery by clicking on the large product image
+- Switch the large product image by clicking on the small thumbnail images
+- Add items to the cart
+- View the cart and remove items from it
+
+### Screenshot
+
+Desktop
+
+<p float="left">
+  <img src="./screenshots/desktop.png" width="500">
+  <img src="./screenshots/desktop-slider.png" width="500">
+</p>
+
+Mobile
+
+<p float="left">
+  <img src="./screenshots/mobile.png" height="450">
+  <img src="./screenshots/mobile-cart.png" height="450">
+  <img src="./screenshots/mobile-cart-empty.png" height="450">
+</p>
+
+### Links
+
+- Live Site URL: [click](https://ecommerce-product-page-borys25ol.netlify.app/)
+
+## My process
+
+### Built with
+
+- React.js
+- HTML5
+- Styled Components
+- Flexbox
+- Mobile First Worflow
+- CSS-In-JS Worflow
+
+## Author
+
+- GitHub - [borys25ol](https://github.com/borys25ol)
+- LinkedIn [Borys Oliinyk](https://www.linkedin.com/in/borys-oliinyk-872a73158/)
+- Frontend Mentor - [@borys25ol](https://www.frontendmentor.io/profile/borys25ol)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
