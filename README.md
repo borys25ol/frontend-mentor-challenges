@@ -92,7 +92,7 @@
 
 #
 
-# 6) Github User Search App
+# 6) GitHub User Search App
 
 ### Challenge link: [click](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6)
 
@@ -105,8 +105,8 @@
 - Styled Components
 - Flexbox
 - Grid
-- Mobile-first worflow
-- CSS-in-JS worflow
+- Mobile-first Workflow
+- CSS-in-JS Workflow
 
 ### Level: 2 (Junior)
 
@@ -124,8 +124,8 @@
 - HTML5
 - Styled Components
 - Flexbox
-- Mobile First Worflow
-- CSS-In-JS Worflow
+- Mobile First Workflow
+- CSS-In-JS Workflow
 - External APIs
 
 ### Level: 3 (Intermediate)
@@ -144,7 +144,27 @@
 - HTML5
 - Styled Components
 - Flexbox
-- Mobile First Worflow
-- CSS-In-JS Worflow
+- Mobile First Workflow
+- CSS-In-JS Workflow
+
+### Level: 3 (Intermediate)
+
+#
+
+# 9) Todo app
+
+### Challenge link: [click](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
+
+### Live solution link: [click](https://todo-app-borys25ol.netlify.app/)
+
+## Technologies:
+
+- React.js
+- HTML5
+- Styled Components
+- Localstorage
+- Flexbox
+- Mobile First Workflow
+- CSS-In-JS Workflow
 
 ### Level: 3 (Intermediate)
