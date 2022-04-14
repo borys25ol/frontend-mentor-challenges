@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+const Heading = styled.h1`
+  height: 0;
+  visibility: hidden;
+`
+
 const Main = styled.main``
 
 const Wrapper = styled.div`
@@ -30,4 +35,4 @@ const Container = styled.div`
   }
 `
 
-export { Main, Wrapper, Container }
+export { Main, Wrapper, Container, Heading }

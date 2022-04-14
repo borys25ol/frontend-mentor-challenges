@@ -77,6 +77,10 @@ body {
   overflow-y: scroll;
 }
 
+ul {
+  list-style: none;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

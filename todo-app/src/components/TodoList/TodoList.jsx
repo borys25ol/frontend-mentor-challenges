@@ -41,7 +41,7 @@ function TodoList({
             className={List.toString()}
           >
             {todosList.map(todo => (
-              <Reorder.Item key={todo.id} value={todo} dragControls={controls} as="div">
+              <Reorder.Item key={todo.id} value={todo} dragControls={controls} as="li">
                 <TodoItem
                   id={todo.id}
                   text={todo.text}

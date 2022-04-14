@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.li`
+const Wrapper = styled.div`
   height: 52px;
   padding: 0 20px;
   display: flex;

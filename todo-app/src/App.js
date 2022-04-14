@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { Container, Main, Wrapper } from 'components/Layout'
+import { Container, Heading, Main, Wrapper } from 'components/Layout'
 import { Header } from 'components/Header'
 import { TodoForm } from 'components/TodoForm'
 import { TodoList } from 'components/TodoList'
@@ -82,6 +82,7 @@ function App() {
       <Container>
         <Header />
         <Main>
+          <Heading>To-do application</Heading>
           <TodoForm todosList={todos} handleTodoAdd={handleTodoAdd} />
           <TodoList
             todosList={filteredTodos}
