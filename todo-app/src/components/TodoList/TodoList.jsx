@@ -1,4 +1,5 @@
 import React from 'react'
+import { Reorder, useDragControls } from 'framer-motion'
 
 import { TodoItem } from 'components/TodoItem'
 import {
@@ -17,12 +18,14 @@ function TodoList({
   todosList,
   currentState,
   activeTasks,
+  handleReorder,
   handleStateChange,
   handleTodoRemove,
   handleTodoComplete,
   handleCompletedRemove,
 }) {
   const states = ['all', 'active', 'completed']
+  const controls = useDragControls()
 
   return (
     <>
@@ -30,18 +33,26 @@ function TodoList({
         {todosList.length < 1 ? (
           <InfoText>There are no {currentState === 'all' ? '' : currentState} tasks</InfoText>
         ) : (
-          <List>
+          <Reorder.Group
+            as="ul"
+            axis="y"
+            values={todosList}
+            onReorder={handleReorder}
+            className={List.toString()}
+          >
             {todosList.map(todo => (
-              <TodoItem
-                key={todo.id}
-                id={todo.id}
-                text={todo.text}
-                isCompleted={todo.completed}
-                handleTodoRemove={handleTodoRemove}
-                handleTodoComplete={handleTodoComplete}
-              />
+              <Reorder.Item key={todo.id} value={todo} dragControls={controls} as="div">
+                <TodoItem
+                  id={todo.id}
+                  text={todo.text}
+                  isCompleted={todo.completed}
+                  handleTodoRemove={handleTodoRemove}
+                  handleTodoComplete={handleTodoComplete}
+                  onPointerDown={e => controls.start(e)}
+                />
+              </Reorder.Item>
             ))}
-          </List>
+          </Reorder.Group>
         )}
         <TodoFilterControl>
           <ItemsLeft>{activeTasks} items left</ItemsLeft>

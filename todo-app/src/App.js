@@ -87,6 +87,7 @@ function App() {
             todosList={filteredTodos}
             currentState={currentState}
             activeTasks={activeTasks}
+            handleReorder={setTodos}
             handleStateChange={handleStateChange}
             handleTodoRemove={handleTodoRemove}
             handleTodoComplete={handleTodoComplete}
