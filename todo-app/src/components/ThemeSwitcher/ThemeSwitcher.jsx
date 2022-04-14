@@ -6,7 +6,7 @@ import { Wrapper } from 'components/ThemeSwitcher'
 import { useLocalStorage } from 'hooks/useLocalStorage'
 
 function ThemeSwitcher() {
-  const { storedValue, setValue } = useLocalStorage('theme', { theme: 'light' })
+  const { storedValue, setValue } = useLocalStorage('theme', { theme: 'dark' })
   const [theme, setTheme] = useState(storedValue.theme)
 
   const iconsMap = {
