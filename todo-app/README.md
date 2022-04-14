@@ -53,7 +53,7 @@ Desktop Light Theme
 Desktop Dark Theme
 
 <p float="left">
-  <img src="./screenshots/desktop-light.png" width="500">
+  <img src="./screenshots/desktop-dark.png" width="500">
 </p>
 
 Mobile Light Theme
