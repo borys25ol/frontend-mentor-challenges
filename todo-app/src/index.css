@@ -72,6 +72,11 @@ body[data-theme='dark'] {
   background: var(--d-very-dark-blue);
 }
 
+body {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
