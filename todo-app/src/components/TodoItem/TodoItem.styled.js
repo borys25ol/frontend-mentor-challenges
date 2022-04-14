@@ -8,6 +8,11 @@ const Wrapper = styled.li`
   background-color: var(--background-color);
   border-bottom: 1px solid var(--border-color);
 
+  &:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
   @media screen and (min-width: 768px) {
     height: 56px;
     padding: 0 22px;
