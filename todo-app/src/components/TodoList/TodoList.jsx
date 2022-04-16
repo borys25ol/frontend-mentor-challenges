@@ -13,8 +13,10 @@ import {
   TodoFiltersMobile,
   Wrapper,
 } from 'components/TodoList'
+import { TASK_STATE } from 'const'
 
 function TodoList({
+  states,
   todosList,
   currentState,
   activeTasks,
@@ -24,14 +26,15 @@ function TodoList({
   handleTodoComplete,
   handleCompletedRemove,
 }) {
-  const states = ['all', 'active', 'completed']
   const controls = useDragControls()
 
   return (
     <>
       <Wrapper>
         {todosList.length < 1 ? (
-          <InfoText>There are no {currentState === 'all' ? '' : currentState} tasks</InfoText>
+          <InfoText>
+            There are no {currentState === TASK_STATE.All ? '' : currentState} tasks
+          </InfoText>
         ) : (
           <Reorder.Group
             as="ul"

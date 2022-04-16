@@ -8,7 +8,7 @@ function filterCompletedTasks(tasks) {
 
 function getTaskId(tasks) {
   const ids = tasks.map(task => task.id)
-  return Math.max(ids) + 1
+  return Math.max(...ids) + 1
 }
 
 export { filterActiveTasks, filterCompletedTasks, getTaskId }

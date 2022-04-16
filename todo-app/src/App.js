@@ -6,21 +6,15 @@ import { TodoForm } from 'components/TodoForm'
 import { TodoList } from 'components/TodoList'
 import { Footer } from 'components/Footer'
 import { filterActiveTasks, filterCompletedTasks, getTaskId } from 'utils'
-
-const defaultTodos = [
-  { id: 1, text: 'Complete online JavaScript course', completed: true },
-  { id: 2, text: 'Jog around the park 3x', completed: false },
-  { id: 3, text: '10 minutes meditation', completed: false },
-  { id: 4, text: 'Read for 1 hour', completed: false },
-  { id: 5, text: 'Pick up groceries', completed: false },
-  { id: 6, text: 'Complete Todo App on Frontend Mentor', completed: false },
-]
+import { useLocalStorage } from 'hooks/useLocalStorage'
+import { DEFAULT_TODOS, TASK_STATE } from 'const'
 
 function App() {
-  const [todos, setTodos] = useState(defaultTodos)
+  const { storedValue, setValue } = useLocalStorage('todos', { todos: DEFAULT_TODOS })
+  const [todos, setTodos] = useState(storedValue.todos)
+  const [filteredTodos, setFilteredTodos] = useState(storedValue.todos)
+  const [currentState, setCurrentState] = useState(TASK_STATE.All)
   const [activeTasks, setActiveTasks] = useState(0)
-  const [filteredTodos, setFilteredTodos] = useState(defaultTodos)
-  const [currentState, setCurrentState] = useState('all')
 
   const handleStateChange = state => {
     setCurrentState(state)
@@ -30,7 +24,7 @@ function App() {
     const taskId = getTaskId(todos)
     const newTask = { id: taskId, text: todoText, completed: false }
     setTodos(currentTodos => [newTask, ...currentTodos])
-    setCurrentState('all')
+    setCurrentState(TASK_STATE.All)
   }
 
   const handleTodoComplete = taskId => {
@@ -43,7 +37,7 @@ function App() {
       }
       return task
     })
-    setTodos(() => updatedTodos)
+    setTodos(updatedTodos)
   }
 
   const handleTodoRemove = taskId => {
@@ -51,20 +45,20 @@ function App() {
     setTodos(filteredTodosList)
   }
 
-  const handleCompletedRemove = taskId => {
-    const notCompletedTodos = todos.filter(task => task.completed !== true)
+  const handleCompletedRemove = () => {
+    const notCompletedTodos = filterActiveTasks(todos)
     setTodos(notCompletedTodos)
   }
 
   useEffect(() => {
     switch (currentState) {
-      case 'all':
+      case TASK_STATE.All:
         setFilteredTodos(todos)
         break
-      case 'completed':
+      case TASK_STATE.Completed:
         setFilteredTodos(filterCompletedTasks(todos))
         break
-      case 'active':
+      case TASK_STATE.Active:
         setFilteredTodos(filterActiveTasks(todos))
         break
       default:
@@ -77,6 +71,10 @@ function App() {
     setActiveTasks(tasks.length)
   }, [todos])
 
+  useEffect(() => {
+    setValue({ todos })
+  }, [todos, setValue])
+
   return (
     <Wrapper>
       <Container>
@@ -85,6 +83,7 @@ function App() {
           <Heading>To-do application</Heading>
           <TodoForm todosList={todos} handleTodoAdd={handleTodoAdd} />
           <TodoList
+            states={Object.values(TASK_STATE)}
             todosList={filteredTodos}
             currentState={currentState}
             activeTasks={activeTasks}

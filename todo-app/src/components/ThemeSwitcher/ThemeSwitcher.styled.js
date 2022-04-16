@@ -9,6 +9,10 @@ const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
+    & > svg {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   @media screen and (min-width: 1024px) {
