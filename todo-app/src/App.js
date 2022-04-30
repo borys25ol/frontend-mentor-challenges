@@ -5,14 +5,13 @@ import { Header } from 'components/Header'
 import { TodoForm } from 'components/TodoForm'
 import { TodoList } from 'components/TodoList'
 import { Footer } from 'components/Footer'
-import { filterActiveTasks, filterCompletedTasks, getTaskId } from 'utils'
+import { filterActiveTasks, getTaskId, sortArrayByBoolean } from 'utils'
 import { useLocalStorage } from 'hooks/useLocalStorage'
 import { DEFAULT_TODOS, TASK_STATE } from 'const'
 
 function App() {
   const { storedValue, setValue } = useLocalStorage('todos', { todos: DEFAULT_TODOS })
-  const [todos, setTodos] = useState(storedValue.todos)
-  const [filteredTodos, setFilteredTodos] = useState(storedValue.todos)
+  const [todos, setTodos] = useState(sortArrayByBoolean(storedValue.todos))
   const [currentState, setCurrentState] = useState(TASK_STATE.All)
   const [activeTasks, setActiveTasks] = useState(0)
 
@@ -50,21 +49,13 @@ function App() {
     setTodos(notCompletedTodos)
   }
 
+  const handleReorder = todos => {
+    setTodos(todos)
+  }
+
   useEffect(() => {
-    switch (currentState) {
-      case TASK_STATE.All:
-        setFilteredTodos(todos)
-        break
-      case TASK_STATE.Completed:
-        setFilteredTodos(filterCompletedTasks(todos))
-        break
-      case TASK_STATE.Active:
-        setFilteredTodos(filterActiveTasks(todos))
-        break
-      default:
-        setFilteredTodos(todos)
-    }
-  }, [currentState, todos])
+    setTodos(todos)
+  }, [todos])
 
   useEffect(() => {
     const tasks = filterActiveTasks(todos)
@@ -72,7 +63,7 @@ function App() {
   }, [todos])
 
   useEffect(() => {
-    setValue({ todos })
+    setValue({ todos: sortArrayByBoolean(todos) })
   }, [todos, setValue])
 
   return (
@@ -84,10 +75,10 @@ function App() {
           <TodoForm todosList={todos} handleTodoAdd={handleTodoAdd} />
           <TodoList
             states={Object.values(TASK_STATE)}
-            todosList={filteredTodos}
+            todosList={todos}
             currentState={currentState}
             activeTasks={activeTasks}
-            handleReorder={setTodos}
+            handleReorder={handleReorder}
             handleStateChange={handleStateChange}
             handleTodoRemove={handleTodoRemove}
             handleTodoComplete={handleTodoComplete}
