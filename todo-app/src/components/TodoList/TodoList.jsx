@@ -28,19 +28,6 @@ function TodoList({
 }) {
   const controls = useDragControls()
 
-  const toHide = (todo, state) => {
-    switch (state) {
-      case TASK_STATE.All:
-        return false
-      case TASK_STATE.Completed:
-        return todo.completed === false
-      case TASK_STATE.Active:
-        return todo.completed === true
-      default:
-        return todosList
-    }
-  }
-
   return (
     <>
       <Wrapper>
@@ -49,21 +36,22 @@ function TodoList({
             There are no {currentState === TASK_STATE.All ? '' : currentState} tasks
           </InfoText>
         ) : (
-          <Reorder.Group values={todosList} onReorder={handleReorder} className={List.toString()}>
+          <Reorder.Group
+            as="ul"
+            axis="y"
+            values={todosList}
+            onReorder={handleReorder}
+            className={List.toString()}
+          >
             {todosList.map(todo => (
-              <Reorder.Item
-                hidden={toHide(todo, currentState)}
-                key={todo.id}
-                value={todo}
-                dragControls={controls}
-                as="li"
-              >
+              <Reorder.Item key={todo.id} value={todo} dragControls={controls} as="li">
                 <TodoItem
                   id={todo.id}
                   text={todo.text}
                   isCompleted={todo.completed}
                   handleTodoRemove={handleTodoRemove}
                   handleTodoComplete={handleTodoComplete}
+                  onPointerDown={e => controls.start(e)}
                 />
               </Reorder.Item>
             ))}
